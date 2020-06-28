@@ -1,0 +1,15 @@
+changeassistant.bat -MODE UM -ACTION ENVCREATE -OUT C:\TEMP\TARGET.log -EXONERR Y -TGTENV H92QHRR2  -CT 2 -UNI Y -CA emdbo -CAP emdbo123 -CO PS -CP PS -CI emdbo -CW emdbo123 -CZYN N -SQH C:\app\client\SARGUMPA\product\12.2.0\client_1\bin\sqlplus.exe -INP ALL -PL PEOPLETOOLS -IND ALL -INL All -INBL ENG -PSH \\psbldfs\dfs\dep\DEP_PS_HOME_OVERRIDE\PT857P08B_1907010952\retail\install_WINDOWS_ORA -PAH \\psbldfs\dfs\dep\DEP_PS_HOME_OVERRIDE\PT857P08B_1907010952\retail\install_WINDOWS_ORA -PCH \\psbldfs\dfs\dep\DEP_PS_HOME_OVERRIDE\PT857P08B_1907010952\retail\install_WINDOWS_ORA-REPLACE N
+
+changeassistant.bat -MODE UM -ACTION ENVCREATE -OUT C:\TEMP\SOURCE.log -EXONERR Y -TGTENV H92R2SRC -CT 2 -UNI Y -CA emdbo -CAP emdbo123 -CO PS -CP PS -CI emdbo -CW emdbo123 -CZYN N -SQH C:\app\client\SARGUMPA\product\12.2.0\client_1\bin\sqlplus.exe -INP ALL -PL PEOPLETOOLS -IND ALL -INL All -INBL ENG -PSH \\psbldfs\dfs\dep\DEP_PS_HOME_OVERRIDE\PT858P04B_2005120422\retail\install_WINDOWS_ORA -PAH \\psbldfs\dfs\dep\DEP_PS_HOME_OVERRIDE\PT858P04B_2005120422\retail\install_WINDOWS_ORA -PCH \\psbldfs\dfs\dep\DEP_PS_HOME_OVERRIDE\PT858P04B_2005120422\retail\install_WINDOWS_ORA -REPLACE N
+
+changeassistant.bat -MODE UM -ACTION OPTIONS -OUT C:\Temp\General.log -REPLACE Y -EXONERR N -SWP TRUE -PSH \\psbldfs\dfs\dep\DEP_PS_HOME_OVERRIDE\PT858P04B_2005120422\retail\install_WINDOWS_ORA -STG C:\CA\staging -OD C:\CA\Output -DL C:\CA\Download  -SQH C:\app\client\SARGUMPA\product\12.2.0\client_1\bin\sqlplus.exe -SRCYN Y -SRCENV H92R2SRC -SRCENV \\psbldfs\dfs\nightly\HR\HR92\200622\pi_home -PIA http://slc07kyw.us.oracle.com:8000/psp/h92r2srcx/?cmd=login&languageCd=ENG& -EMYN Y -EMH slc07kze.us.oracle.com -EMP 8000 -EMC 1048576 -EMPING 10000 -EMDRV C:
+
+changeassistant.bat -MODE UM -ACTION EMFVAL -OUT C:\TEMP\EMFVAL.log -EXONERR Y -REPLACE N 
+
+changeassistant.bat -MODE UM -ACTION UPLDTGT -TGTENV H92QHRR2 -OUT C:\TEMP\UPDTGT.log -EXONERR N
+
+\\psbldfs.us.oracle.com\dfs\enterprise\HCM\NET_HCM92\jdk\bin\java -jar \psbldfs.us.oracle.comdfsenterpriseHCMNET_HCM92HCM8.58Chrome.jar
+
+changeassistant.bat -MODE UM -ACTION CPCREATE -UPD UPDPI35R2HR -OUT C:\TEMP\CPCREATE.log -EXONERR N
+
+changeassistant.bat -MODE UM -ACTION CPAPPLY -TGTENV H92QHRR2 -UPD UPDPI35R2HR -TYPE IP -SYNCTYPE Y -TYPE IP -RESETJOB N -WARNINGSOK Y -OUT C:\Temp\APPLYCP.log -EXONERR N
